@@ -36,10 +36,7 @@ exports.create = (req, res) => {
 exports.login = async (req, res) => {
     const data = req.body;
     
-    const userData = await User.findOne({
-        attributes: [
-            'password', 'name'
-        ],
+    const userData = await User.findOne({    
         where: {
             username: {
                 [Op.eq]: data.username

@@ -34,13 +34,11 @@ app.use(express.urlencoded({
 }));
 
 // sync database
-const Restaurant = db.restaurant;
-
 db.sequelize.sync();
 
 // Routes
 require('./app/routes/http.routes')(app);
 
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 app.listen(PORT);
