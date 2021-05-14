@@ -9,6 +9,10 @@ module.exports = (sequelize, Sequelize) => {
         total: {
             type: Sequelize.DOUBLE,
             allowNUll: false
+        },
+        order_date: {
+            type: Sequelize.DATE,
+            allowNull: false
         }
     });
 

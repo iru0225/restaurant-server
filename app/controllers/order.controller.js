@@ -35,7 +35,8 @@ exports.getList = (req, res) => {
         attributes: [
             'id',
             'createdAt',
-            'total'
+            'total',
+            'order_date'
         ],
         where: {
             userId: {
@@ -63,8 +64,4 @@ exports.getList = (req, res) => {
             message: err.message || 'Some error occured while try get data'
         })
     })
-
-    // db.sequelize.query(
-    //     `SELECT orders.id, orders.total, orders.createdAt, restaurants.name FROM Orders INNER JOIN orderitems ON orders.id = orderitems.orderId INNER JOIN restaurants ON orderitems.restaurantId = restaurants.id WHERE orders.userId = ${userid} ORDER BY orders.createdAt LIMIT ${parseInt(offset)}, 20`
-    // )
 }
